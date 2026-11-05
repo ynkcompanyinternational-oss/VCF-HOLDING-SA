@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background: #160507;
+  font-family: Arial, sans-serif;
+}
+
+.menu-principal {
+  position: fixed;
+  inset: 0;
+  background-color: #160507;
+  background-image: url("../assets/fundo-menu.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.voltar {
+  position: absolute;
+  top: 18px;
+  left: 22px;
+  color: white;
+  font-size: 38px;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.botoes-menu {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(92%, 420px);
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 22px 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.mapa-botao {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  cursor: pointer;
+}
+
+.mapa-botao img {
+  display: block;
+  width: 100%;
+  max-width: 115px;
+  height: 65px;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.7));
+  transition: transform .2s ease;
+}
+
+.mapa-botao span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #aeb5bd 30%,
+    #ffffff 50%,
+    #707984 75%,
+    #f5f6f7
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 2px 2px #000);
+}
+
+.mapa-botao:active img {
+  transform: scale(.96);
+}
+
+@media (max-width: 600px) {
+  .botoes-menu {
+    top: 42%;
+    width: 94%;
+    gap: 18px 10px;
+  }
+
+  .mapa-botao img {
+    max-width: 100px;
+    height: 55px;
+  }
+
+  .mapa-botao span {
+    font-size: 11px;
+  }
+}
+
+/* POSICIONAMENTO DOS BOTOES ORIGINAIS */
+@media (max-width: 600px) {
+  .menu-principal {
+    align-items: initial;
+    justify-content: initial;
+  }
+
+  .botoes-menu {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 18px 12px;
+    padding: 0;
+  }
+
+  .mapa-botao {
+    width: 100%;
+  }
+}
+
+/* VCF HOLDING - MENU PREMIUM TOM SOBRE TOM */
+
+@media (max-width: 600px) {
+
+  .botoes-menu {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    justify-items: center;
+    align-items: center;
+
+    gap: 34px 18px;
+    padding: 0;
+  }
+
+  /* Retira somente os mapas dos botões */
+  .mapa-botao img {
+    display: none !important;
+  }
+
+  /* Escrita vinho metálico */
+  .mapa-botao span {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-align: center;
+
+    background: linear-gradient(
+      180deg,
+      #863b42 0%,
+      #64232a 35%,
+      #b5a9aa 48%,
+      #743039 53%,
+      #49151c 100%
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 1px 2px #080102);
+  }
+
+  .mapa-botao {
+    width: 100%;
+    min-height: 34px;
+    padding: 5px;
+
+    background: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+
+/* AUMENTAR OS NOMES DO MENU */
+@media (max-width: 600px) {
+  .mapa-botao span {
+    font-size: 17px !important;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+  }
+
+  .botoes-menu {
+    gap: 38px 12px;
+  }
+}
+
+
+/* BOTOES PREMIUM VCF HOLDING */
+@media (max-width: 600px) {
+
+  .mapa-botao {
+    width: 100%;
+    min-height: 58px;
+    padding: 12px 5px;
+
+    background: linear-gradient(
+      145deg,
+      #181818,
+      #050505 55%,
+      #111111
+    );
+
+    border: 1px solid #aeb4b9;
+    border-radius: 7px;
+
+    box-shadow:
+      inset 0 1px 2px rgba(255,255,255,0.13),
+      0 0 4px rgba(190,200,210,0.25),
+      0 3px 8px rgba(0,0,0,0.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mapa-botao span {
+    font-size: 17px !important;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+  }
+
+  .mapa-botao:active {
+    border-color: #ffffff;
+    box-shadow:
+      inset 0 0 8px rgba(200,200,200,0.2),
+      0 0 7px rgba(200,200,200,0.4);
+  }
+}
+
+
+/* LETRAS CROMADAS VCF HOLDING */
+@media (max-width: 600px) {
+
+  .mapa-botao span {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #c8cdd2 12%,
+      #ffffff 24%,
+      #747b82 38%,
+      #f9fbff 49%,
+      #aeb5bc 62%,
+      #ffffff 76%,
+      #737a82 88%,
+      #e9edf0 100%
+    ) !important;
+
+    background-size: 100% 100%;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+
+    font-size: 17px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.2px;
+
+    filter:
+      drop-shadow(0 1px 0 #ffffff)
+      drop-shadow(0 2px 2px #000000);
+  }
+
+}
+
+/* VCF HOLDING - VINHO METALIZADO ESCOVADO */
+
+@media (max-width: 600px) {
+
+  .mapa-botao {
+    background:
+      repeating-linear-gradient(
+        180deg,
+        rgba(255,255,255,0.055) 0px,
+        rgba(255,255,255,0.015) 1px,
+        rgba(0,0,0,0.10) 2px,
+        transparent 3px,
+        transparent 5px
+      ),
+      linear-gradient(
+        145deg,
+        #9b343f 0%,
+        #681923 25%,
+        #8c2935 48%,
+        #481018 72%,
+        #771e2b 100%
+      ) !important;
+
+    border: 1px solid #d5d9dd !important;
+    border-radius: 7px;
+
+    box-shadow:
+      inset 0 1px 3px rgba(255,255,255,0.35),
+      inset 0 -3px 6px rgba(0,0,0,0.45),
+      0 0 5px rgba(210,215,220,0.35),
+      0 3px 8px rgba(0,0,0,0.65);
+  }
+
+}
+
+/* VCF HOLDING - COURO EXECUTIVO PREMIUM */
+
+.mapa-botao {
+  background:
+    radial-gradient(ellipse at 25% 20%,
+      rgba(255,255,255,.09), transparent 55%),
+    repeating-linear-gradient(
+      105deg,
+      rgba(255,255,255,.018) 0px,
+      rgba(255,255,255,.018) 1px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      145deg,
+      #54151e 0%,
+      #310a10 35%,
+      #49121b 65%,
+      #20070b 100%
+    ) !important;
+
+  border: 1px solid #92999e !important;
+  border-radius: 9px;
+
+  box-shadow:
+    inset 0 2px 5px rgba(255,255,255,.12),
+    inset 0 -4px 8px rgba(0,0,0,.55),
+    0 3px 9px rgba(0,0,0,.65);
+}
+
+/* Letras cromadas preservadas */
+.mapa-botao span {
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #aeb5bc 22%,
+    #ffffff 42%,
+    #858d95 62%,
+    #f8f9fa 82%,
+    #b5bbc1 100%
+  ) !important;
+
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* CONTORNO CROMADO VINHO */
+.mapa-botao {
+  border: 1px solid #853b48 !important;
+  box-shadow:
+    inset 0 1px 2px rgba(255,190,195,.16),
+    inset 0 -3px 6px rgba(0,0,0,.55),
+    0 0 3px rgba(130,35,52,.45),
+    0 3px 9px rgba(0,0,0,.65) !important;
+}
+
+
+/* VCF Coins: remover sublinhado do texto */
+.mapa-botao,
+.mapa-botao:hover,
+.mapa-botao:focus,
+.mapa-botao:active,
+.mapa-botao:visited {
+  text-decoration: none !important;
+}
+
+a.mapa-botao {
+  text-decoration: none !important;
+}
+
+a.mapa-botao span {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Novo fundo oficial do menu VCF Holding */
+body {
+  background: #160407 url("../assets/fundo-menu.png") center top / 100% 100% fixed no-repeat !important;
+  background-color: #160407 !important;
+}

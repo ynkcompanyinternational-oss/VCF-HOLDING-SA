@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    background: #160507;
+}
+
+.hero {
+    position: fixed;
+    inset: 0;
+    width: auto;
+    height: auto;
+
+    background-color: #160507;
+    background-image: url("../assets/fundo-inicial.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    width: 36px;
+    height: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 5px;
+}
+
+.navigation {
+    display: none;
+    position: absolute;
+    z-index: 11;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 18px;
+    min-width: 190px;
+
+    background: rgba(25, 4, 10, .96);
+    border: 1px solid rgba(210, 190, 190, .5);
+    border-radius: 8px;
+}
+
+.navigation.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+}
+
+/* MENU CROMADO VCF HOLDING */
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    border-radius: 3px;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #d9dce0 18%,
+        #777e87 38%,
+        #f8f8f8 52%,
+        #858b94 72%,
+        #ffffff 100%
+    );
+
+    box-shadow:
+        0 0 2px rgba(255,255,255,.8),
+        0 1px 4px rgba(0,0,0,.8);
+}
